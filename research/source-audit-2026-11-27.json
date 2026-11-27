@@ -1,0 +1,26 @@
+{
+  "retrievedAt": "2026-11-27T17:05:01.122Z",
+  "source": "https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/README.md",
+  "sourceReadmeSha256": "ce43cd6d13c3dbb828d7c5a677ada23a925b851e33184ca9c5580863a124f875",
+  "status": "community-archive-cross-check-not-creator-original",
+  "salphaseion": {
+    "ciphertextBytes": 80,
+    "envelopeSha256": "9e2831e1b34b5f34796df47ccaf6530d48d371c61a6bff84d60db1064fa7a258",
+    "matchesLocal": true
+  },
+  "decimalClueChecks": [
+    {
+      "decimal": "174161018595377387932283725836301293648834223172419022725145445",
+      "ascii": "lastwordsbeforearchichoice"
+    },
+    {
+      "decimal": "36026487402470099740341006948",
+      "ascii": "thispassword"
+    }
+  ],
+  "limitations": [
+    "Cosmic and phase32end blobs not independently authenticated by this check.",
+    "KDF choice is still a hypothesis for unsolved ciphertexts.",
+    "No puzzle candidate batch or confirmed solution in this audit."
+  ]
+}
