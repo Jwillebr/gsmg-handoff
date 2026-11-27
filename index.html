@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GSMG 5 BTC Puzzle — Working Handoff</title>
+<style>
+:root{--bg:#0b0e14;--panel:#121722;--ink:#d7e0ea;--mut:#8b97a7;--acc:#4ea1ff;--grn:#56d364;--bd:#232b38;--code:#0a0d13}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:28px;border-bottom:2px solid var(--acc);padding-bottom:10px;margin-top:0}
+h2{font-size:21px;margin-top:38px;color:var(--acc);border-bottom:1px solid var(--bd);padding-bottom:6px}
+h3{font-size:17px;margin-top:26px;color:#c9d6e5}
+a{color:var(--acc)}
+code{background:var(--code);padding:2px 6px;border-radius:4px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#9ad1ff;word-break:break-all}
+pre{background:var(--code);border:1px solid var(--bd);border-radius:8px;padding:14px;overflow:auto}
+pre code{background:none;padding:0;color:#b7c7d9}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel);color:#cfe0f2}
+ul{padding-left:22px}
+li{margin:4px 0}
+strong{color:#eaf2fb}
+hr{border:0;border-top:1px solid var(--bd);margin:30px 0}
+.badge{display:inline-block;background:#1a2230;border:1px solid var(--bd);color:var(--mut);font-size:12px;padding:3px 10px;border-radius:20px;margin-bottom:18px}
+.foot{margin-top:50px;color:var(--mut);font-size:13px;border-top:1px solid var(--bd);padding-top:16px}
+</style></head>
+<body><div class="wrap">
+<div class="badge">Living document · last updated 2026-11-27 · public puzzle, solver keeps prize</div>
+<h1 id="gsmgio-5-btc-puzzle-working-handoff-project-brief">GSMG.IO 5 BTC Puzzle — Working Handoff / Project Brief</h1>
+<p><strong>Purpose:</strong> Full state of work on the final unsolved stage (Cosmic Duality). Hand this to any AI or collaborator so they can start from the frontier instead of re-deriving solved steps.</p>
+<p><strong>Prize address:</strong> <code>1GSMG1JC9wtdSwfwApgj2xcmJPAwx7prBe</code> (P2PKH, legacy). Public, creator-sponsored challenge; solver keeps the prize. Prize halves at each BTC halving.</p>
+<hr />
+<h2 id="1-the-single-remaining-lock">1. The single remaining lock</h2>
+<p>Everything up to and including the <strong>SalPhaseIon</strong> page is solved. The one unsolved thing is the <strong>passphrase</strong> to the <strong>Cosmic Duality</strong> AES blob (and possibly two smaller related blobs). Find that passphrase → the stage opens.</p>
+<p>The creator's own decoded text warns the final key may be <strong>layered / "intertwined passwords,"</strong> not a single word, and that <em>"brute forcing might be required."</em></p>
+<hr />
+<h2 id="2-confirmed-solved-chain-reproducible">2. Confirmed solved chain (reproducible)</h2>
+<ol>
+<li><strong>14×14 image</strong> → read as bits (black/blue = 1, white/yellow = 0), <strong>counter-clockwise spiral</strong> → <code>gsmg.io/theseedisplanted</code></li>
+<li><strong>theseedisplanted page</strong> → hidden POST form (F12), password <code>theflowerblossomsthroughwhatseemstobeaconcretesurface</code> (a Logic song lyric) → next stage</li>
+<li><strong>Phase 2</strong> password: <code>causality</code> (answer to "what if the Merovingian is wrong… the thinker's name" → the Jacque Fresco / future-is-ours idea)</li>
+<li><strong>Phase 3 / 3.2</strong> passwords are a concatenated phrase → <strong>SHA-256</strong> → the hex digest is used as the OpenSSL <code>-pass</code>. Example that works:</li>
+<li><code>SHA256("jacquefrescogiveitjustonesecondheisenbergsuncertaintyprinciple")</code> = <code>250f37726d6862939f723edc4f993fde9d33c6004aab4f2203d9ee489d61ce4c</code></li>
+<li><strong>Decentraland audio hint</strong> → split stereo, invert one channel, mix to mono, spectrogram → <code>HASHTHETEXT</code></li>
+<li><strong>SalPhaseIon page</strong> reached via <code>SHA256("GSMGIO5BTCPUZZLECHALLENGE1GSMG1JC9wtdSwfwApgj2xcmJPAwx7prBe")</code> = <code>89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32</code> → <code>gsmg.io/&lt;that hash&gt;</code></li>
+</ol>
+<h3 id="salphaseion-decoding-all-confirmed">SalPhaseIon decoding (all confirmed)</h3>
+<p>The page text uses letters a–i = 1–9 and o = 0, plus "ABBA" binary blocks (a=0,b=1), plus embedded base64.
+- <strong>ABBA binary</strong> → <code>matrixsumlist</code>, <code>enter</code>
+- <strong>a1z26 digits → read as decimal → convert to base-16 → decode hex as ASCII</strong>:
+  - <code>174161018595377387932283725836301293648834223172419022725145445</code> → <code>lastwordsbeforearchichoice</code>
+  - <code>36026487402470099740341006948</code> → <code>thispassword</code>
+- <strong>Hidden clues:</strong> "our first hint is your last command" → token <code>yourlastcommand</code>; "shabefanstoo" → "SHA be fans too" → token <code>secondanswer</code>
+- Embedded base64 → the AES blobs below.</p>
+<hr />
+<h2 id="3-the-aes-blobs-the-targets">3. The AES blobs (the targets)</h2>
+<p>All are OpenSSL <code>Salted__</code> format, <strong>AES-256-CBC</strong>, key derivation = <strong>EVP_BytesToKey with SHA-256, 1 iteration</strong> (equivalent to <code>openssl enc -aes-256-cbc -d -a -md sha256 -pass pass:...</code>).</p>
+<h3 id="a-cosmic-duality-primary-target-1328-ciphertext-bytes-83-blocks-salt-2d3f6fe06dc950e6">A) Cosmic Duality (primary target) — 1328 ciphertext bytes (83 blocks), salt <code>2d3f6fe06dc950e6</code></h3>
+<pre><code>U2FsdGVkX18tP2/gbclQ5tNZuD4shoV3axuUd8J8aycGCAMoYfhZK0JecHTDpTFe
+dGJh4SJIP66qRtXvo7PTpvsIjwO8prLiC/sNHthxiGMuqIrKoO224rOisFJZgARi
+c7PaJPne4nab8XCFuV3NbfxGX2BUjNkef5hg7nsoadZx08dNyU2b6eiciWiUvu7D
+SATSFO7IFBiAMz7dDqIETKuGlTAP4EmMQUZrQNtfbJsURATW6V5VSbtZB5RFk0O+
+IymhstzrQHsU0Bugjv2nndmOEhCxGi/lqK2rLNdOOLutYGnA6RDDbFJUattggELh
+2SZx+SBpCdbSGjxOap27l9FOyl02r0HU6UxFdcsbfZ1utTqVEyNs91emQxtpgt+6
+BPZisil74Jv4EmrpRDC3ufnkmWwR8NfqVPIKhUiGDu5QflYjczT6DrA9vLQZu3ko
+k+/ZurtRYnqqsj49UhwEF9GfUfl7uQYm0UunatW43C3Z1tyFRGAzAHQUFS6jRCd+
+vZGyoTlOsThjXDDCSAwoX2M+yM+oaEQoVvDwVkIqRhfDNuBmEfi+HpXuJLPBS1Pb
+UjrgoG/Uv7o8IeyST4HBv8+5KLx7IKQS8f1kPZ2YUME+8XJx0caFYs+JS2Jdm0oj
+Jm3JJEcYXdKEzOQvRzi4k+6dNlJ05TRZNTJvn0fPG5cM80aQb/ckUHsLsw9a4Wzh
+HsrzBQRTIhog9sTm+k+LkXzIJiFfSzRgf250pbviFGoQaIFl1CTQPT2w29DLP900
+6bSiliywwnxXOor03Hn+7MJL27YxeaGQn0sFGgP5X0X4jm3vEBkWvtF4PZl0bXWZ
+LvVL/zTn87+2Zi/u7LA6y6b2yt7YVMkpheeOL0japXaiAf3bSPeUPGz/eu8ZX/Nn
+O3259hG1XwoEVcGdDBV0Nh0A4/phPCR0x5BG04U0OeWAT/5Udc/gGM0TT2FrEzs/
+AJKtmsnj31OSsqWb9wD+CoduYY2JrkzJYihE3ZcgcvqqffZXqxQkaI/83ro6JZ4P
+ubml0PUnAnkdmnBCpbClbZMzmo3ELZ0EQwsvkJFDMQmiRhda4nBooUW7zXOIb7Wx
+bE9THrt3cdZP5uAgVfgguUNE4fZMN8ATEDhdSsLklJe2GvihKuZVA6uuSkWAsK6u
+MGo76xpPwYs3eUdLjtANS83a6/F/fhkX1GXs7zbQjh+Inzk8jhEdEogl9jPs/oDj
+KjbkUpFlsCWwAZGoeKlmX7c4OGuD5c+FEH+2nYHvYl8y1E/K5SDt9Uocio8XuxbD
+ZOzhw7LMSGkD1MZxpDzsCZY1emkSNd88NFj+9U8VssIDDVMYwKMsHKfjc0x5OlzQ
+1f6ST0xCkwydDHHGRKKxFC4y6H6fV9sgf9OPK/65z94Rx72+mfvTyizShjxYSRpl
+sH9otU4parl8roD0KsVTfXZoYrYXzK6cXBn1BO/OEqWlu++Dd9MiGaUGKd22fXER
+qNWoRAKlNn2b6EehD2D8WaAoliPURjkB0Lb/FpP9unI93Twg6NxBXAj734nctukR
+b3kE08RydJV70eJsvEftF5hbED4HacGx9pzisaSz6t9AKiuSoF6uoCtlTIYatyfZ
+kQA4wg50hAJqTynOQ09ArRHEchtB/7uvWZSBGJ7+zlzRGKx99P3oDZD+Y5D8bmUs
+3PV6FnAp+IRSlnsQ6hChkwBoQUcngcfGSkBRvmGjsGercCetRRwBOfh9fbX2ruw4
+mzRYrGnz9eBtepkJXDRjD6yvhNfQMCSkm6l9zMWxKvFbv5g2ae2SLrEt/x3MP2/G
+</code></pre>
+<h3 id="b-salphaseion-small-blob-80-bytes-5-blocks-salt-3ab585348552415d">B) SalPhaseIon small blob — 80 bytes (5 blocks), salt <code>3ab585348552415d</code></h3>
+<pre><code>U2FsdGVkX186tYU0hVJBXXUnBUO7C0+X4KUWnWkCvoZSxbRD3wNsGWVHefvdrd9zQvX0t8v3jPB4okpspxebRi6sE1BMl5HI8Rku+KejUqTvdWOX6nQjSpepXwGuN/jJ
+</code></pre>
+<h3 id="c-phase-32-end-small-blob-80-bytes-5-blocks-salt-b45a5e3d827593ca">C) "phase 3.2 end" small blob — 80 bytes (5 blocks), salt <code>b45a5e3d827593ca</code></h3>
+<pre><code>U2FsdGVkX1+0Wl49gnWTyiimluu7V3+vl7st0gUt9sWDzNLxDmlPMsDSiuW2a46zgKlIi8aaqY5gpJPPEzW1n9n3/26qs4zstWtPKF8Zs/BTNN4IiEh4qu18mdC0NAv4
+</code></pre>
+<hr />
+<h2 id="4-decoded-tokens-available-as-passphrase-material">4. Decoded tokens available as passphrase material</h2>
+<p><code>matrixsumlist</code>, <code>enter</code>, <code>lastwordsbeforearchichoice</code>, <code>thispassword</code>, <code>yourlastcommand</code>, <code>secondanswer</code>, <code>shabef</code>, <code>causality</code>, <code>HASHTHETEXT</code>.
+Pattern from solved stages: <strong>assemble phrase → SHA-256 → hex used as OpenSSL password</strong> (but raw phrase is sometimes the password directly — try both).</p>
+<hr />
+<h2 id="5-tested-and-ruled-out-do-not-repeat">5. TESTED AND RULED OUT (do not repeat)</h2>
+<p>Against the Cosmic blob (and where noted, all three), none decrypted:
+- Every single decoded token above, raw and SHA-256, and all pairwise/triple concatenations, multiple separators.
+- Full "recipe" orderings of the page tokens (e.g. <code>matrixsumlistenterlastwordsbeforearchichoicethispassword</code>), raw and hashed.
+- The entire Matrix "Architect" scene (film script) — every line, sentence, speaker-labeled, and consecutive pairs; "Neo"→"you" swaps; +"thispassword"/"enter"; raw and SHA-256.
+- The creator's <strong>rewritten</strong> Architect message — all 1–12 word windows, closing passages, full text; crossed with 42 / yin-yang / duality terms.
+- The closing line "I REALLY HOPE YOURE THE ONE CIAO BELLA" in ~60 variants.
+- <strong>"matrix sum list" as a literal grid computation:</strong> row sums, column sums, both, colored-cell counts/positions, all separators, raw and hashed — all fail.
+- <strong>Diagonal sums:</strong> main diag = 7, anti-diag = 9 (sum 16, echoes the puzzle's 7/16 motif) — tested as passphrases and as index pointers — fail.
+- Rhythm/Morse/musical-note readings of the colored cells — produce unanchored strings, no verification target, treated as dead ends.
+- Reused phase-3.2 hex password, the Jacque Fresco phrase, Bitcoin genesis headline, grid total counts — fail on all blobs.
+- <strong>Matrix Reloaded hacking-scene strings</strong> (Trinity/sshnuke/CityPower grid): <code>Z10N0101</code>, <code>ZION0101</code>, <code>zion</code>, <code>210N0101</code>, <code>0101</code>, <code>sshnuke</code>, <code>CityPower</code>, <code>10.2.2.2</code>, <code>Trinity</code>, <code>CRC32</code>, <code>SSHv1CRC32</code>, <code>AccessGranted</code> — raw, SHA-256, all cases, and each combined with puzzle tokens — fail on all blobs.
+- ~15M+ total passphrase attempts across the session; zero decrypts.</p>
+<h3 id="running-log-append-new-ruled-out-attempts-here-with-date">Running log (append new ruled-out attempts here with date)</h3>
+<ul>
+<li>2026-11-26: Matrix hacking-scene password <code>Z10N0101</code> + scene strings (above) — no hit.</li>
+<li>2026-11-26: Honkai Impact 3rd angle (blob name "Cosmic Duality" is a game weapon). Tested <code>NebulousDuality</code> (the PRI-ARM it unlocks), <code>CosmicDuality</code>, game name, crafting materials — raw/sha/case variants — no hit. Conclusion: "Cosmic Duality" likely = plain yin-yang meaning, not a game reference.</li>
+<li>NOTE: "Architect room monitor flash sequence" (Matrix Reloaded ~1:53:00) raised as a thematic idea — NOT a documented puzzle input; puzzle clues all live on gsmg.io pages, not film visuals. Needs real observed data before testing; treated as low-probability vibe, not a lead.</li>
+<li>2026-11-26: Architect's literal last words "We won't" + the full "Hope... quintessential human delusion" line + "Denial is the most predictable..." — all spacings/cases/sha — no hit. Reinforces that <code>lastwordsbeforearchichoice</code> is an INSTRUCTION, not a quote to plug in directly.</li>
+<li>2026-11-26: "lastwordsbeforearchichoice" as pointer — words-before-"choice" ("the problem is", "as you adequately put"), two-doors sentence ("the moment of truth", "the anomaly revealed as both beginning and end", "beginning and end", "alpha and omega"), "there are two doors" — all cases/sha — no hit.</li>
+<li>2026-11-26: "archi" = Archimedes reading — "noli turbare circulos meos" (+ tangere variant), Greek translit, "do not disturb my circles", "Eureka"/"Heureka", "stand away from my diagram", "give me a place to stand"; also archi=chief/first ("firstchoice","primechoice") — all cases/sha — no hit.</li>
+<li>2026-11-26: Focused batch on the TWO 80-byte blobs (salphaseion + phase32end), 1256 decryptions: all decoded tokens + themes as singles (case/sha), all pairwise concats of core tokens, all triples of the 6 page tokens, full page-order strings, firstanswer/secondanswer combos — no hit.</li>
+<li>2026-11-26: Claude-generated idea sweep (all cases/sha, all 3 blobs) — NO HIT on any:</li>
+<li>(A) "private KEYNOTE" angle: keynote, privatekeynote, theactualprivatekeynote, privatekey</li>
+<li>(B) the two doors: source, thesource, returntothesource, salvationofzion, left/right door</li>
+<li>(C) "half and better half" literal: half, betterhalf, lefthalf, righthalf, physicalhalf, ghosthalf, halves</li>
+<li>(D) Lo Shu magic square (sums=15, digits 1-9 no zero): 15, magicsquare, loshu, luoshu, 159</li>
+<li>(E) byte-140 / "worth hundred fourty": 140, byte140, offset140, hundredfourty</li>
+<li>(F) user's philosophical phrases: youcompleteme, lifeismeaning, choosenow, iloveyou, chooseandcontinuechoosing</li>
+<li>(G) duality pairs: alphaomega, beginningandend, yinandyang, causalityandchoice, orderandchaos</li>
+<li>(H) "first answer" (since secondanswer exists): firstanswer, theanswer, answerone, firstanswersecondanswer</li>
+<li>2026-11-27: <strong>Path A SHA-256 XOR-chain</strong> (community-suggested, issue #104/#62). Tested 60 XOR pre-keys = XOR of individual SHA-256 digests of token subsets {matrixsumlist, enter, lastwordsbeforearchichoice, thispassword} ± quote variant {asyouadequatelyputtheproblemischoice | therearetwodoors | hopeitisthequintessentialhumandelusion} ± {sha256, shabef, yourlastcommand, secondanswer, hashthetext}. Each pre-key used as hex-string AND raw-bytes passphrase, md5 AND sha256 EVP_BytesToKey, all 3 blobs, PKCS#7-validated. NO valid-padding decrypt.</li>
+<li>2026-11-27: <strong>Path B</strong> direct concat of resolved tokens + quote boundaries, md5 &amp; sha256 EVP, PKCS#7-validated — no hit.</li>
+<li>METHOD NOTE (from issue #55): with <code>-nopad</code>, ANY key yields ~1327 high-entropy bytes; a real solve MUST pass PKCS#7 padding or show magic bytes (PGP/ASCII/WIF/hex). Our tester now requires padding-valid + printable, so no false positives.</li>
+</ul>
+<p><strong>Lesson:</strong> single clue-phrases are exhausted. The answer likely requires a non-obvious transformation or a human insight not yet public.</p>
+<hr />
+<h2 id="6-open-untested-ideas-worth-pursuing">6. OPEN / UNTESTED IDEAS worth pursuing</h2>
+<ul>
+<li><strong>"The halves" (physical vs ghost)</strong> and a <strong>byte-140 offset</strong> are referenced in community GitHub issue #78 (treat as <em>speculative/unverified</em> — that post has no reproducible method). The "worth hundred fourty" line in the Architect text may literally mean <strong>byte offset 140</strong>.</li>
+<li>The creator says the key is <strong>intertwined/layered</strong> — likely a <em>combination</em> of two answers (e.g. a "first answer" + <code>secondanswer</code>), possibly XOR'd or concatenated in a specific way.</li>
+<li>The two 80-byte blobs may each yield a <em>half</em> of the final key; decrypt those first, combine, then open Cosmic.</li>
+<li><code>secondanswer</code> implies a <strong>"first answer"</strong> exists — identify it.</li>
+</ul>
+<hr />
+<h2 id="7-working-test-rig-powershell-no-install-needed">7. Working test rig (PowerShell, no install needed)</h2>
+<pre><code class="language-powershell">function Try-Pass {
+    param([string]$Pass, [string]$File = &quot;cosmic.txt&quot;)
+    $b64 = (Get-Content $File -Raw) -replace '\s',''
+    $raw = [Convert]::FromBase64String($b64)
+    $salt = $raw[8..15]; $ct = $raw[16..($raw.Length-1)]
+    $pb = [Text.Encoding]::UTF8.GetBytes($Pass)
+    $sha = [Security.Cryptography.SHA256]::Create()
+    $data=@(); $prev=@()
+    while ($data.Length -lt 48){ $prev=$sha.ComputeHash($prev+$pb+$salt); $data+=$prev }
+    $aes=[Security.Cryptography.Aes]::Create(); $aes.Mode='CBC'; $aes.Padding='None'
+    $aes.Key=$data[0..31]; $aes.IV=$data[32..47]
+    $plain=$aes.CreateDecryptor().TransformFinalBlock($ct,0,$ct.Length)
+    $printable=($plain | Where-Object {$_ -ge 32 -and $_ -lt 127}).Count / $plain.Length
+    if ($printable -gt 0.85){ Write-Host &quot;*** HIT pass='$Pass'&quot; -ForegroundColor Green; Write-Host ([Text.Encoding]::UTF8.GetString($plain)) }
+    else { Write-Host &quot;no ($([math]::Round($printable*100))% printable)&quot; }
+}
+function SHA256Hex($s){ -join ([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($s)) | %{ $_.ToString('x2') }) }
+</code></pre>
+<p>Equivalent OpenSSL: <code>openssl enc -aes-256-cbc -d -a -md sha256 -in cosmic.txt -pass pass:YOURGUESS</code>
+<strong>Judge by readable English output, NOT by padding — valid padding happens ~1/256 by chance.</strong></p>
+<hr />
+<h2 id="8-source-links">8. Source links</h2>
+<ul>
+<li>Hints (clean): https://github.com/dinhoka/gsmgio-5btc-puzzle</li>
+<li>Issues (active, read critically): https://github.com/puzzlehunt/gsmgio-5btc-puzzle/issues</li>
+<li>Creator's puzzle + live comments: https://gsmg-io.itch.io/puzzle</li>
+<li>Reddit: r/gsmg</li>
+</ul>
+<hr />
+<h2 id="9-ask-for-the-next-collaborator-chatgpt-etc">9. Ask for the next collaborator (ChatGPT etc.)</h2>
+<blockquote>
+<p>This is a public, creator-sponsored crypto puzzle (solver keeps the prize). The only unsolved step is the AES passphrase for the "Cosmic Duality" blob in §3A. Section 5 lists what's already ruled out — don't repeat it. Focus on §6: the "two halves"/intertwined-key idea, the byte-140 offset, and identifying the "first answer" that pairs with <code>secondanswer</code>. Propose <em>reproducible</em> methods that yield an exact passphrase string, then test with §7. Judge success only by readable decrypted output.</p>
+</blockquote>
+<div class="foot">Working notes for the GSMG.IO 5 BTC puzzle. All content is analysis of a public, creator-sponsored challenge. Nothing here is a private key. Judge any candidate only by a readable decrypt with valid PKCS#7 padding.</div>
+</div></body></html>
