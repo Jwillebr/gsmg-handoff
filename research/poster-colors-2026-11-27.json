@@ -1,0 +1,111 @@
+{
+  "source": "https://gsmg.io/puzzle",
+  "archivedCopy": "https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/puzzle.png",
+  "fetchedDate": "2026-11-27",
+  "imageSha256": "38125bbdf1ea58b9b30b075bc6bf71e4089d04bba37098317e47097e2f2a1830",
+  "method": "Center sample of each 75px cell in top-left 14x14 grid. Blue: B>150,R<100,G<130; yellow: R>200,G>200,B<100. Coordinates 1-based row,column.",
+  "width": 1048,
+  "height": 1556,
+  "blueCount": 15,
+  "yellowCount": 9,
+  "blueCells": [
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      11
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      14
+    ],
+    [
+      10,
+      3
+    ],
+    [
+      12,
+      9
+    ],
+    [
+      13,
+      2
+    ],
+    [
+      14,
+      3
+    ],
+    [
+      14,
+      11
+    ]
+  ],
+  "yellowCells": [
+    [
+      1,
+      14
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      11
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      10,
+      7
+    ],
+    [
+      11,
+      8
+    ],
+    [
+      13,
+      10
+    ]
+  ]
+}

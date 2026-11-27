@@ -40,6 +40,10 @@ The dictionary worker and recurring research are separate processes.
    Simple double/triple hashes (L1) and round-robin interleaving (L2) are already
    tested. Treat byte-140 and community suggestions as hypotheses until
    supported by source evidence. Compare against the inherited ruled-out list.
+   S2 now reproduces a strong prime-slot grammar in DBBI, with two complete
+   parses (83/84 cells). Neither marker-count pair matches the live poster's
+   measured 15 blue / 9 yellow cells. Before using a colour or 7x12-grid model,
+   establish its image version and mapping; do not assume community counts.
 3. Use `research/tester.cjs` to run exact candidate lines with a persistent
    checkpoint. SHA-256 and MD5 are separate KDF hypotheses. Do not repeat the
    completed fixture validation unless the tester or dependencies change.
@@ -197,3 +201,37 @@ candidate requires verification without disclosing it.
   a clearly stated independent structural hypothesis.
 - Source worker checkpoint: 164,000 words / 1,971,234 reported decryptions at
   14:58:21 EST. Worker and sync process are still present and untouched.
+
+## 2026-11-27 16:06 EST: lossless prime-slot parsing S2 and poster discrepancy
+
+- Independently implemented the community's proposed DBBI grammar: number cells
+  from 1; at a prime cell consume `b` or `be`; elsewhere consume one a-i symbol;
+  require the entire 91-symbol input to be consumed. Enumerating every branch
+  gives exactly two parses: 84 cells with 16 `b` / 7 `be` prime markers, and
+  83 cells with 15 `b` / 8 `be` prime markers. Tokenization is ambiguous.
+- In 10,000 fixed-seed symbol-count-preserving shuffled controls, zero had any
+  complete parse under that grammar. Smoothed frequency is 1/10,001; this is
+  descriptive, not a preregistered p-value, because the model was selected from
+  prior community exploration. It suggests the grammar deserves investigation
+  but does not determine numeric values, grid shape, or the intended password.
+- Hypothesis source, retrieved 2026-11-27:
+  [researcher's open-lead ledger](https://github.com/AppleLamps/GSMG-CLEAN/blob/main/03_OPEN_LEADS.md).
+  Its proposed 7x12 shape and downstream interpretations remain unverified here.
+  Independent parser, full tokenizations, hashes and controls:
+  `research/audit-prime-parser.cjs`, `research/prime-parser-S2.json`.
+- Checked the actual [creator-hosted puzzle image](https://gsmg.io/puzzle).
+  The endpoint returns PNG, not HTML. Its 29,931 bytes exactly match pinned
+  community `puzzle.png`, SHA-256
+  `38125bbdf1ea58b9b30b075bc6bf71e4089d04bba37098317e47097e2f2a1830`.
+  A 14x14 grid with 75px cells has **15 blue and 9 yellow cells** under explicit
+  RGB thresholds. Sampling five offsets per cell (15,25,37,50,60) gives the same
+  counts each time. Thus neither DBBI parse's marker counts match this poster
+  under either blue/yellow assignment. Do not use the community's 16/7 count
+  as a verified fact about this image; another image version or mapping would
+  need evidence. No proof of a colour interpretation or decryption follows.
+- Reproducer: `research/extract-poster-colors.ps1`; complete coordinates and
+  metadata: `research/poster-colors-2026-11-27.json`. Live image retained locally
+  at `.gsmg-private/sources/puzzle-live-2026-11-27.png`. S2 did not run AES
+  candidates or establish a new plaintext. No confirmed solution.
+- Worker checkpoint: 188,000 words / 2,259,234 reported decryptions at
+  16:00:14 EST. Existing worker and sync processes were not modified.

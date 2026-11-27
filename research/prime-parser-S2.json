@@ -1,0 +1,396 @@
+{
+  "id": "S2-2026-11-27",
+  "auditedAt": "2026-11-27T21:05:44.714Z",
+  "sourceUtf8Sha256": "a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77",
+  "dbbiSha256": "71fe46259e270c113529dfaded4b59c59a9dffd826a7202ab07fc498b6a2c5ca",
+  "generatorSha256": "b519c0b778cb708be38b2b3f7ba4c114d7585fafdd6004f4e64423a333064565",
+  "model": "1-based prime cell positions consume b or be; non-prime positions consume one a-i symbol; consume entire stream losslessly; enumerate all parses",
+  "hypothesisSource": "https://github.com/AppleLamps/GSMG-CLEAN/blob/main/03_OPEN_LEADS.md",
+  "selectionCaveat": "Model borrowed after prior exploration; control frequency is descriptive, not a preregistered significance test or proof of intended encoding.",
+  "solutions": [
+    {
+      "cells": 84,
+      "tokens": [
+        "d",
+        "b",
+        "b",
+        "i",
+        "b",
+        "f",
+        "b",
+        "h",
+        "c",
+        "c",
+        "be",
+        "g",
+        "b",
+        "i",
+        "h",
+        "a",
+        "b",
+        "e",
+        "b",
+        "e",
+        "i",
+        "h",
+        "be",
+        "g",
+        "g",
+        "e",
+        "g",
+        "e",
+        "be",
+        "b",
+        "b",
+        "g",
+        "e",
+        "h",
+        "h",
+        "e",
+        "b",
+        "h",
+        "h",
+        "f",
+        "b",
+        "a",
+        "b",
+        "f",
+        "d",
+        "h",
+        "be",
+        "f",
+        "f",
+        "c",
+        "d",
+        "b",
+        "b",
+        "f",
+        "c",
+        "c",
+        "c",
+        "g",
+        "b",
+        "f",
+        "be",
+        "e",
+        "g",
+        "g",
+        "e",
+        "c",
+        "be",
+        "d",
+        "c",
+        "i",
+        "b",
+        "f",
+        "b",
+        "f",
+        "f",
+        "g",
+        "i",
+        "g",
+        "be",
+        "e",
+        "e",
+        "a",
+        "b",
+        "e"
+      ],
+      "markers": [
+        {
+          "token": "b",
+          "position": 2
+        },
+        {
+          "token": "b",
+          "position": 3
+        },
+        {
+          "token": "b",
+          "position": 5
+        },
+        {
+          "token": "b",
+          "position": 7
+        },
+        {
+          "token": "be",
+          "position": 11
+        },
+        {
+          "token": "b",
+          "position": 13
+        },
+        {
+          "token": "b",
+          "position": 17
+        },
+        {
+          "token": "b",
+          "position": 19
+        },
+        {
+          "token": "be",
+          "position": 23
+        },
+        {
+          "token": "be",
+          "position": 29
+        },
+        {
+          "token": "b",
+          "position": 31
+        },
+        {
+          "token": "b",
+          "position": 37
+        },
+        {
+          "token": "b",
+          "position": 41
+        },
+        {
+          "token": "b",
+          "position": 43
+        },
+        {
+          "token": "be",
+          "position": 47
+        },
+        {
+          "token": "b",
+          "position": 53
+        },
+        {
+          "token": "b",
+          "position": 59
+        },
+        {
+          "token": "be",
+          "position": 61
+        },
+        {
+          "token": "be",
+          "position": 67
+        },
+        {
+          "token": "b",
+          "position": 71
+        },
+        {
+          "token": "b",
+          "position": 73
+        },
+        {
+          "token": "be",
+          "position": 79
+        },
+        {
+          "token": "b",
+          "position": 83
+        }
+      ],
+      "bMarkers": 16,
+      "beMarkers": 7,
+      "posterCountMatchEitherAssignment": false
+    },
+    {
+      "cells": 83,
+      "tokens": [
+        "d",
+        "b",
+        "b",
+        "i",
+        "b",
+        "f",
+        "b",
+        "h",
+        "c",
+        "c",
+        "be",
+        "g",
+        "b",
+        "i",
+        "h",
+        "a",
+        "b",
+        "e",
+        "b",
+        "e",
+        "i",
+        "h",
+        "be",
+        "g",
+        "g",
+        "e",
+        "g",
+        "e",
+        "be",
+        "b",
+        "b",
+        "g",
+        "e",
+        "h",
+        "h",
+        "e",
+        "b",
+        "h",
+        "h",
+        "f",
+        "b",
+        "a",
+        "b",
+        "f",
+        "d",
+        "h",
+        "be",
+        "f",
+        "f",
+        "c",
+        "d",
+        "b",
+        "b",
+        "f",
+        "c",
+        "c",
+        "c",
+        "g",
+        "b",
+        "f",
+        "be",
+        "e",
+        "g",
+        "g",
+        "e",
+        "c",
+        "be",
+        "d",
+        "c",
+        "i",
+        "b",
+        "f",
+        "b",
+        "f",
+        "f",
+        "g",
+        "i",
+        "g",
+        "be",
+        "e",
+        "e",
+        "a",
+        "be"
+      ],
+      "markers": [
+        {
+          "token": "b",
+          "position": 2
+        },
+        {
+          "token": "b",
+          "position": 3
+        },
+        {
+          "token": "b",
+          "position": 5
+        },
+        {
+          "token": "b",
+          "position": 7
+        },
+        {
+          "token": "be",
+          "position": 11
+        },
+        {
+          "token": "b",
+          "position": 13
+        },
+        {
+          "token": "b",
+          "position": 17
+        },
+        {
+          "token": "b",
+          "position": 19
+        },
+        {
+          "token": "be",
+          "position": 23
+        },
+        {
+          "token": "be",
+          "position": 29
+        },
+        {
+          "token": "b",
+          "position": 31
+        },
+        {
+          "token": "b",
+          "position": 37
+        },
+        {
+          "token": "b",
+          "position": 41
+        },
+        {
+          "token": "b",
+          "position": 43
+        },
+        {
+          "token": "be",
+          "position": 47
+        },
+        {
+          "token": "b",
+          "position": 53
+        },
+        {
+          "token": "b",
+          "position": 59
+        },
+        {
+          "token": "be",
+          "position": 61
+        },
+        {
+          "token": "be",
+          "position": 67
+        },
+        {
+          "token": "b",
+          "position": 71
+        },
+        {
+          "token": "b",
+          "position": 73
+        },
+        {
+          "token": "be",
+          "position": 79
+        },
+        {
+          "token": "be",
+          "position": 83
+        }
+      ],
+      "bMarkers": 15,
+      "beMarkers": 8,
+      "posterCountMatchEitherAssignment": false
+    }
+  ],
+  "poster": {
+    "imageSha256": "38125bbdf1ea58b9b30b075bc6bf71e4089d04bba37098317e47097e2f2a1830",
+    "blueCount": 15,
+    "yellowCount": 9
+  },
+  "control": {
+    "seedHex": "53325052",
+    "iterations": 10000,
+    "nullModel": "uniform shuffles preserving DBBI symbol counts",
+    "controlsWithAnyCompleteParse": 0,
+    "smoothedCompleteParseFrequency": 0.00009999000099990002
+  },
+  "limitations": "Matching prime-slot grammar does not determine token values, grid shape, colour assignment, plaintext, or an AES password. Neither parse matches the measured poster colour counts."
+}
