@@ -1,0 +1,15 @@
+{
+  "retrievedAt": "2026-11-27T19:03:30.592Z",
+  "source": "https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/SalPhaselonCosmicDuality.png",
+  "screenshotSha256": "a3810ba24250c5a04908e1281c2202e73f7487f9d19f41bfd2c3e55fa9be57ed",
+  "screenshotBytes": 49970,
+  "width": 668,
+  "height": 619,
+  "method": "manual-first-line-visual-transcription-compared-to-local-base64",
+  "observedBase64Prefix": "U2FsdGVkX18tP2/gbclQ5tNZuD4shoV3axuUd8J8aycGCAMoYfhZK0JecHTDpTFe",
+  "prefixCharacters": 64,
+  "matchesLocalPrefix": true,
+  "localEnvelopeSha256": "b18950551a4dd0cb8a9378f0906ba18c03a15f0ee83eb98c6bc90165c5f79805",
+  "completeEnvelopeAuthenticated": false,
+  "limitation": "Screenshot cuts off the textarea: the complete Cosmic ciphertext cannot be verified from this image. The archived image is community evidence, not a creator-authenticated original."
+}

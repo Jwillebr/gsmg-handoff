@@ -31,8 +31,9 @@ The dictionary worker and recurring research are separate processes.
 
 ## Next research run
 
-1. Finish Cosmic Duality provenance verification using creator material or
-   an independently archived page/image. Salphaseion matches the community
+1. Finish full Cosmic Duality provenance verification using creator material or
+   an independently archived page. The community screenshot has now confirmed
+   only the first 64 base64 characters; it is cropped. Salphaseion matches the community
    archive; phase32end was recovered from a reproduced historical stage.
    SHA-256 EVP derivation is now verified for historical phase 3.2, but remains
    an inference for unsolved blobs. Creator-hosted endpoints were inaccessible
@@ -124,3 +125,41 @@ candidate requires verification without disclosing it.
   creator evidence; their claimed plaintext hashes are not validation targets.
 - Source worker checkpoint at start: 118,000 words / 1,419,234 decryptions at
   13:00:45 EST. No worker inputs or running processes were changed.
+
+## 2026-11-27 14:04 EST: partial screenshot provenance and interleaving L2
+
+- Visually inspected the archived Salphaseion/Cosmic screenshot at pinned
+  commit `fb92dd15487c6e2d275adb8c923698b7166c328e`. Its first Cosmic base64
+  line (64 characters) matches our target exactly. The screenshot cuts off
+  the textarea, so it cannot establish the full ciphertext. Reproducible
+  prefix check and image fingerprint: `research/audit-cosmic-image.cjs` and
+  `research/cosmic-image-audit-2026-11-27.json`.
+  [Archived image](https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/SalPhaselonCosmicDuality.png),
+  retrieved 2026-11-27; SHA-256
+  `a3810ba24250c5a04908e1281c2202e73f7487f9d19f41bfd2c3e55fa9be57ed`.
+- L2 tests literal round-robin character interleaving, motivated by the
+  historical stage's intertwined-password wording. This is a speculative,
+  bounded interpretation, distinct from the concatenation and XOR experiments.
+  Four decoded clue strings are permuted in every ordered selection of
+  2, 3 or 4 distinct strings (60 orderings). Weave either the original strings
+  or their individual SHA-256 hex digests, preserving leftover characters;
+  test both woven text and its SHA-256 hex. No L1 candidates are repeated.
+  Generator has known-output assertions for unequal-length and three-way
+  interleaving: `research/generate-interleave-batch.cjs`.
+- Completed 240 distinct passwords / 1,440 decryptions (three target blobs,
+  SHA-256 and MD5 EVP) in 138 ms. Six padding-valid outputs, all binary, zero
+  text-review flags. Independent OpenSSL reproduced all six byte-for-byte via
+  `node research/verify-padding-results.cjs research/checkpoint-L2.json`.
+  Plaintext remains only in ignored local storage. No confirmed solution.
+- Candidate SHA-256:
+  `943906203be83b18b8de2b5db4d8ca75d333c3188a56cce9b0357795089d583f`.
+  Full settings, target/tester hashes and completed checkpoint:
+  `research/checkpoint-L2.json`; exact passwords: `research/candidates-L2.txt`.
+  Do not repeat this interleaving family without new source justification.
+- Brief exploratory decode: removing the first bold binary segment from the
+  archived Salphaseion first quote and interpreting remaining a-i/o as decimal
+  gives 661 digits. Decimal-to-hex of this whole sequence, or separately its
+  91/570-digit pieces, does not directly yield ASCII/base64. This was a format
+  probe, not proof that the unexplained numeric text is meaningless.
+- Worker advanced to 142,000 words / 1,707,234 reported decryptions at
+  14:02:04 EST. Worker and existing progress-sync process remain present.
