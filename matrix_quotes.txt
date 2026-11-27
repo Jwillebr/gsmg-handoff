@@ -1,0 +1,62 @@
+# Matrix quotes & key phrases — feed to gsmg_worker.ps1 as wordlist.txt
+# (worker auto-expands each line to case/nospace/sha256 variants)
+The Matrix has you
+Follow the white rabbit
+Knock knock Neo
+Wake up Neo
+There is no spoon
+Do not try and bend the spoon
+Free your mind
+Welcome to the real world
+Unfortunately no one can be told what the Matrix is
+What is the Matrix
+Fate it seems is not without a sense of irony
+I know kung fu
+Dodge this
+Never send a human to do a machines job
+Human beings are a disease
+Me Myself and I
+Why oh why didnt I take the blue pill
+The problem is choice
+Everything begins with choice
+Choice is an illusion
+As you adequately put the problem is choice
+Hope it is the quintessential human delusion
+The source and the salvation of Zion
+The function of the One is to return to the source
+Your life is the sum of a remainder of an unbalanced equation
+Ergo
+Concordantly
+Vis a vis
+The first matrix I designed was quite naturally perfect
+I have been waiting for you
+Denial is the most predictable of all human responses
+We wont
+If I were you I would hope that we dont meet again
+Causality
+There is no escaping the nature of the universe
+It is the question that drives us
+The answer is out there Neo
+It is inevitable
+My name is Neo
+Zion
+Zion0101
+Z10N0101
+The One
+Neo
+Trinity
+Morpheus
+The Oracle
+The Architect
+Merovingian
+The Keymaker
+Agent Smith
+Everything that has a beginning has an end
+Temet nosce
+Know thyself
+Deus ex machina
+The path of the One ends at the source
+Hope
+Love
+The problem is choice the problem is choice
+Beginning and end
