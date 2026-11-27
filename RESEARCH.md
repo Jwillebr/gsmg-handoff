@@ -31,10 +31,13 @@ The dictionary worker and recurring research are separate processes.
 
 ## Next research run
 
-1. Finish provenance verification against creator material for Cosmic Duality
-   and phase32end, and verify the KDF assumptions. Salphaseion has only been
-   cross-checked against a community archive, not creator-hosted originals.
-   Source links are in `index.html`. Preserve provenance for transformations.
+1. Finish Cosmic Duality provenance verification using creator material or
+   an independently archived page/image. Salphaseion matches the community
+   archive; phase32end was recovered from a reproduced historical stage.
+   SHA-256 EVP derivation is now verified for historical phase 3.2, but remains
+   an inference for unsolved blobs. Creator-hosted endpoints were inaccessible
+   to the browser fetch tool at the last check; use another archival source
+   rather than repeatedly retrying the same inaccessible endpoint.
 2. Choose one justified, bounded experiment on unresolved clue relationships
    such as first/second answers or intertwined halves. Treat byte-140 and
    community suggestions as hypotheses until supported by source evidence.
@@ -85,3 +88,39 @@ candidate requires verification without disclosing it.
 - No confirmed solution and no new substantive candidate batch in this run.
   Existing dictionary-worker checkpoint was 94,000 words / 1,131,234
   decryptions at 11:58:09 EST; worker and sync process remain present.
+
+## 2026-11-27 13:05 EST: historical regression and layered-hash batch L1
+
+- `research/verify-phase32.cjs` reproduces historical phase 3.2 from the pinned
+  community archive, using its published solved password. SHA-256 EVP yields
+  2,422 plaintext bytes with the expected opening; independent OpenSSL
+  decryption is byte-identical. MD5 fails padding. The embedded phase32end
+  envelope exactly matches our target. This advances provenance beyond simply
+  copying the handoff; it does not authenticate the creator-hosted original.
+  Hashes and settings: `research/phase32-verification-2026-11-27.json`.
+- Original hashed gsmg.io page and creator itch.io page were inaccessible to
+  the web fetch tool on this run. Cosmic provenance is still unresolved.
+- Experiment L1 interprets the archived `shabefanstoo` clue as a possible
+  additional SHA-256 instruction. This is a speculative reading; the source
+  does not establish that it literally means the token `secondanswer`.
+  Raw and single-hash forms are omitted because the inherited handoff reports
+  them extensively tested. Generator: `research/generate-layered-batch.cjs`.
+  It uses the four archived decoded clues, their ordered distinct pairs,
+  individual hash/cleartext pair mixtures, and full page order, then applies
+  two or three hashes of UTF-8 hex, or a second hash of the binary digest.
+- Completed all 162 distinct candidate passwords on three targets with both
+  SHA-256 and MD5 EVP: 972 decryptions in 87 ms, 3 padding-valid results,
+  0 text-review flags. All three were binary output, retained locally and
+  independently reproduced with OpenSSL. None is evidence of a solution.
+  Padding alone is expected to produce occasional false positives.
+- Candidate file SHA-256:
+  `fd2e4c794cbc2a5765e3e80e342fbe8aa96ad17e4fccbf4c1edd9ac500daf81c`.
+  Exact candidates: `research/candidates-L1.txt`; settings/target/tester hashes
+  and complete checkpoint: `research/checkpoint-L1.json`. Do not repeat L1.
+- Sources retrieved 2026-11-27:
+  [pinned community README](https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/README.md),
+  [issue 104 and subsequent corrections](https://github.com/puzzlehunt/gsmgio-5btc-puzzle/issues/104).
+  Issue discussions contain disputed solver-generated chains and are not
+  creator evidence; their claimed plaintext hashes are not validation targets.
+- Source worker checkpoint at start: 118,000 words / 1,419,234 decryptions at
+  13:00:45 EST. No worker inputs or running processes were changed.

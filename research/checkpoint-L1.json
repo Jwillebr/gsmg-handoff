@@ -1,0 +1,38 @@
+{
+  "manifest": {
+    "testerSha256": "442c49ef658688c5ce78d5908869d5c46c91025345338b48b014ead593422dd5",
+    "inputSha256": "fd2e4c794cbc2a5765e3e80e342fbe8aa96ad17e4fccbf4c1edd9ac500daf81c",
+    "targets": [
+      {
+        "name": "cosmic",
+        "sha256": "b18950551a4dd0cb8a9378f0906ba18c03a15f0ee83eb98c6bc90165c5f79805"
+      },
+      {
+        "name": "salphaseion",
+        "sha256": "9e2831e1b34b5f34796df47ccaf6530d48d371c61a6bff84d60db1064fa7a258"
+      },
+      {
+        "name": "phase32end",
+        "sha256": "291dfd6f3e759ec2e272b35a00c24907da70c3e7a9291b4c13605c7b0b4f3de9"
+      }
+    ],
+    "digests": [
+      "sha256",
+      "md5"
+    ],
+    "encoding": "utf8-exact-lines",
+    "uniqueCandidates": 162
+  },
+  "manifestHash": "b890251745dece7ce9e1652150a3fe94a6951e0fe8b223ef9370cd8b0fd68c5f",
+  "next": 162,
+  "decryptions": 972,
+  "validPadding": 3,
+  "reviewCandidates": 0,
+  "complete": true,
+  "updatedAt": "2026-11-27T18:04:47.600Z",
+  "lastBatch": {
+    "begin": 0,
+    "end": 162,
+    "elapsedMs": 87
+  }
+}

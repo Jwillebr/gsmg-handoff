@@ -1,0 +1,23 @@
+{
+  "retrievedAt": "2026-11-27T18:04:46.965Z",
+  "source": "https://github.com/puzzlehunt/gsmgio-5btc-puzzle/blob/fb92dd15487c6e2d275adb8c923698b7166c328e/README.md",
+  "envelopeSha256": "9d172dc017034564b40eb381fa61e31421f509a08430864c77ccf86cfc8fe784",
+  "passwordHex": "250f37726d6862939f723edc4f993fde9d33c6004aab4f2203d9ee489d61ce4c",
+  "variants": {
+    "sha256": {
+      "validPadding": true,
+      "expectedPrefix": true,
+      "plaintextBytes": 2422,
+      "plaintextSha256": "b82afeb86f9e50848220f9b64b744b821400308aea273a1c949b9d2d0e408a34",
+      "opensslByteMatch": true
+    },
+    "md5": {
+      "validPadding": false
+    }
+  },
+  "recoveredPhase32end": {
+    "envelopeSha256": "291dfd6f3e759ec2e272b35a00c24907da70c3e7a9291b4c13605c7b0b4f3de9",
+    "ciphertextBytes": 80,
+    "matchesLocal": true
+  }
+}
