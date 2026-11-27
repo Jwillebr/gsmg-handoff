@@ -12,8 +12,15 @@ $destinationLog = Join-Path $repoDirectory 'progress.log'
 
 function Invoke-RepoGit {
     param([string[]]$GitArguments)
-    $output = & git -C $repoDirectory @GitArguments 2>&1
-    if ($LASTEXITCODE -ne 0) {
+    # Windows PowerShell can treat Git's normal stderr messages as errors.
+    # Decide success using Git's exit code, not its output stream.
+    $previousPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $output = & git -C $repoDirectory @GitArguments 2>&1
+        $gitExitCode = $LASTEXITCODE
+    } finally { $ErrorActionPreference = $previousPreference }
+    if ($gitExitCode -ne 0) {
         throw "git $($GitArguments -join ' ') failed: $($output -join [Environment]::NewLine)"
     }
     return $output
