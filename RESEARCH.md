@@ -47,9 +47,11 @@ The dictionary worker and recurring research are separate processes.
    S3 has now established a partial ordered connection: the 84-cell parse
    matches 22/23 of the grid's first 23 markers, differing at prime 73; the
    grid has a 24th marker absent from both parses. The signed 84-cell model
-   sums to 101, equal to the grid's one-bit count. Next evaluate this explicit
-   model with the source-supported width 14 (6x14), separating new deductions
-   from arbitrary 7x12/Hill interpretations. Do not repeat S3's alignment scan.
+   sums to 101, equal to the grid's one-bit count. Direct signed 6x14 row/column
+   sums have now been tested as passwords in L3 without a hit. Before trying
+   more matrix dimensions or operations, require an additional source-supported
+   constraint or independently testable prediction. Arbitrary word fragments
+   from a 7x12/Hill interpretation are not validation. Do not repeat S3 or L3.
 3. Use `research/tester.cjs` to run exact candidate lines with a persistent
    checkpoint. SHA-256 and MD5 are separate KDF hypotheses. Do not repeat the
    completed fixture validation unless the tester or dependencies change.
@@ -286,3 +288,37 @@ candidate requires verification without disclosing it.
   successful decryptions or hash-path pages in that ledger remain untrusted.
 - Worker checkpoint: 210,000 words / 2,523,234 reported decryptions at
   16:57:10 EST. Worker and sync processes remain active and were not changed.
+
+## 2026-11-27 18:00 EST: signed matrix-sum password batch L3
+
+- Tested the planned literal `matrixsumlist` reading using the 84-cell signed
+  DBBI model, placed row-major in six rows of 14 cells. Width 14 is motivated by
+  the original image, but this reshape and the signed numeric interpretation
+  remain hypotheses; neither is an explicitly decoded instruction.
+- Row sums: `[30,54,-22,2,128,-91]`; column sums:
+  `[-70,20,-179,41,95,37,32,38,77,28,45,29,-124,32]`. Both total 101 as expected
+  from S3; this is a conserved total, not new independent evidence for a shape.
+  Column sums modulo 26 with A=0 yield `iudprlgmzctdgg`; rows yield `ececyn`.
+  Neither has been asserted to be a decoded message.
+- Candidate family is fully bounded: rows, columns, rows-then-columns and
+  columns-then-rows; signed decimal with empty/comma/space/colon/hyphen
+  separators, or modulo-26 alphabetic encodings with A=0/A=1; every material
+  both raw and SHA-256 UTF-8 hex. Removed any L1/L2 overlaps. This tests DBBI
+  sums, distinct from the inherited handoff's original binary-grid sum sweeps.
+- Completed 56 unique passwords / 336 decryptions over three targets and
+  SHA-256/MD5 EVP in 22 ms. One padding-valid binary output, zero text-review
+  flags. Independent OpenSSL exactly reproduced that result. No confirmed
+  solution. The binary output remains in ignored local storage.
+- Generator with known matrix-sum fixture:
+  `research/generate-matrix-batch.cjs`. Exact derivation/settings:
+  `research/matrix-batch-L3.json`; candidates: `research/candidates-L3.txt`;
+  completed checkpoint and source/target/tester hashes:
+  `research/checkpoint-L3.json`. Candidate SHA-256:
+  `590ccec744e253a91df90fa8d92573b30b3e95d66425679efa0fdc78cc6a9e7d`.
+- Inputs remain the previously authenticated
+  [Salphaseion source](https://gsmg.io/89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32)
+  and [original grid](https://gsmg.io/img/follow_the_white_rabbit.png), fetched
+  2026-11-27; local source fingerprints are in S3. No additional web claims
+  or supposed community plaintext hashes were used in L3.
+- Worker checkpoint: 232,000 words / 2,787,234 reported decryptions at
+  17:54:06 EST. Worker and inputs were not modified.

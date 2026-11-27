@@ -1,0 +1,101 @@
+{
+  "id": "L3-2026-11-27",
+  "generatedAt": "2026-11-27T22:59:19.958Z",
+  "model": "signed 84-cell DBBI, row-major 6x14; b=-prime slot,be=+prime slot,ordinary a-i=1..9",
+  "generatorSha256": "1083265f542a7216c2d3695060b94dab98478f5d74c952ccb888c61493b50990",
+  "sourceArtifactSha256": "e2abf26d8f4732174f8ded90a406d3b890fb773e08bd1610b44488c5e6f33e0d",
+  "materials": [
+    {
+      "name": "rows",
+      "values": [
+        30,
+        54,
+        -22,
+        2,
+        128,
+        -91
+      ],
+      "mod26A0": "ececyn",
+      "mod26A1": "dbdbxm"
+    },
+    {
+      "name": "columns",
+      "values": [
+        -70,
+        20,
+        -179,
+        41,
+        95,
+        37,
+        32,
+        38,
+        77,
+        28,
+        45,
+        29,
+        -124,
+        32
+      ],
+      "mod26A0": "iudprlgmzctdgg",
+      "mod26A1": "htcoqkflybscff"
+    },
+    {
+      "name": "rows-columns",
+      "values": [
+        30,
+        54,
+        -22,
+        2,
+        128,
+        -91,
+        -70,
+        20,
+        -179,
+        41,
+        95,
+        37,
+        32,
+        38,
+        77,
+        28,
+        45,
+        29,
+        -124,
+        32
+      ],
+      "mod26A0": "ececyniudprlgmzctdgg",
+      "mod26A1": "dbdbxmhtcoqkflybscff"
+    },
+    {
+      "name": "columns-rows",
+      "values": [
+        -70,
+        20,
+        -179,
+        41,
+        95,
+        37,
+        32,
+        38,
+        77,
+        28,
+        45,
+        29,
+        -124,
+        32,
+        30,
+        54,
+        -22,
+        2,
+        128,
+        -91
+      ],
+      "mod26A0": "iudprlgmzctdggececyn",
+      "mod26A1": "htcoqkflybscffdbdbxm"
+    }
+  ],
+  "representations": "Signed decimal, separators empty/comma/space/colon/hyphen; modulo-26 letters A=0 or A=1; each raw and SHA256 UTF8-hex; remove L1/L2 repeats",
+  "candidates": 56,
+  "candidateSha256": "590ccec744e253a91df90fa8d92573b30b3e95d66425679efa0fdc78cc6a9e7d",
+  "limitations": "No source explicitly specifies a 6x14 DBBI reshape or a modulo-26 conversion. No inferred word fragment alone is a solve."
+}
