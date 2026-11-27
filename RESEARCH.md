@@ -44,6 +44,12 @@ The dictionary worker and recurring research are separate processes.
    parses (83/84 cells). Neither marker-count pair matches the live poster's
    measured 15 blue / 9 yellow cells. Before using a colour or 7x12-grid model,
    establish its image version and mapping; do not assume community counts.
+   S3 has now established a partial ordered connection: the 84-cell parse
+   matches 22/23 of the grid's first 23 markers, differing at prime 73; the
+   grid has a 24th marker absent from both parses. The signed 84-cell model
+   sums to 101, equal to the grid's one-bit count. Next evaluate this explicit
+   model with the source-supported width 14 (6x14), separating new deductions
+   from arbitrary 7x12/Hill interpretations. Do not repeat S3's alignment scan.
 3. Use `research/tester.cjs` to run exact candidate lines with a persistent
    checkpoint. SHA-256 and MD5 are separate KDF hypotheses. Do not repeat the
    completed fixture validation unless the tester or dependencies change.
@@ -235,3 +241,48 @@ candidate requires verification without disclosing it.
   candidates or establish a new plaintext. No confirmed solution.
 - Worker checkpoint: 188,000 words / 2,259,234 reported decryptions at
   16:00:14 EST. Existing worker and sync processes were not modified.
+
+## 2026-11-27 17:05 EST: original grid and DBBI-marker alignment S3
+
+- Retrieved [the original grid PNG](https://gsmg.io/img/follow_the_white_rabbit.png),
+  350x350, 1,958 bytes, SHA-256
+  `5e8d84b88f8f829428df5d2a8bf36c7268346f169b799ac7570b6223990d204f`.
+  The root path without `/img/` returned 404; use the actual image path.
+  Local source: `.gsmg-private/sources/grid-live-2026-11-27.png`.
+- Extracted each 25x25 cell by majority pixel class (without editing cells),
+  then followed the down-first counter-clockwise spiral. The first 192 bits
+  reproduce `gsmg.io/theseedisplanted`; four residual majority-class bits are
+  `0000`. All 24 coloured cells fall exactly at byte-LSB positions, so their
+  blue/yellow sequence is the parity of the URL's ASCII characters. This
+  independently explains the measured 15/9 colour counts, rather than making
+  them unexplained password ingredients. The grid contains 101 one-bits.
+- Additional prime weighting of the 24 ordered markers gives blue 484 and
+  yellow 479. These sums are an extra hypothesis, not automatically a decoded
+  instruction. This does not establish the full image contains no other data:
+  majority-cell extraction intentionally ignores fine pixel/rabbit structure.
+- S3 compares both DBBI prime-marker parses against 23 of the 24 grid markers,
+  enumerating every one-marker omission, both reading directions and both
+  colour assignments. Best score: 22/23, using the 84-cell parse, forward order,
+  `b=blue`, `be=yellow`, omitting the final grid marker. The sole disagreement
+  is marker 21 / prime 73: DBBI says blue, grid says yellow. The 83-cell parse
+  also disagrees at prime 83 under the same direct alignment. There is no exact
+  match, and the omitted 24th marker must not be silently discarded as solved.
+- Applying that entire alignment family to 5,000 fixed-seed shuffled marker
+  sequences (preserving colour totals) yielded 2 with scores at least 22.
+  Smoothed tail frequency 3/5,001 = 0.00059988. This is exploratory and does not
+  account for all earlier community model selection, so it is not a proof of
+  intended encoding. It supports investigating the partial ordered relation.
+- Under the explicit signed-value hypothesis (ordinary a-i=1..9; prime-slot
+  `b=-slot`, `be=+slot`), 84 cells total 341-240=101, matching the independent
+  grid one-bit count. The 83-cell alternative totals 262. This additional
+  consistency does not specify a grid shape, plaintext or AES password.
+- Reproducers: `research/extract-grid.ps1`, `research/audit-marker-alignment.cjs`.
+  Complete source/grid hashes, cells, marker coordinates, numeric values and
+  controls: `research/original-grid-2026-11-27.json`,
+  `research/marker-alignment-S3.json`. No AES batch or confirmed solution here.
+- Relevant prior research consulted 2026-11-27:
+  [grid artifact measurements](https://github.com/AppleLamps/GSMG-CLEAN/blob/main/prior_research_ledgers/rabbit_gemini_audit/FINDINGS_48_addenda.md).
+  Measurements above were independently reproduced; later claims about
+  successful decryptions or hash-path pages in that ledger remain untrusted.
+- Worker checkpoint: 210,000 words / 2,523,234 reported decryptions at
+  16:57:10 EST. Worker and sync processes remain active and were not changed.

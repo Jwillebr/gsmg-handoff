@@ -1,0 +1,23 @@
+{
+  "source": "https://gsmg.io/img/follow_the_white_rabbit.png",
+  "fetchedDate": "2026-11-27",
+  "imageSha256": "5e8d84b88f8f829428df5d2a8bf36c7268346f169b799ac7570b6223990d204f",
+  "method": "Majority pixel class over every 25x25 cell; B=blue,Y=yellow,1=black,0=white or near-white. No cell edited.",
+  "minimumMajorityFraction": 0.64,
+  "rows": [
+    "00110B0010110Y",
+    "11B1001110B011",
+    "1101110B001001",
+    "0110B000011101",
+    "0B1000110Y0110",
+    "100110Y010Y011",
+    "100B1100010Y00",
+    "B11000000010Y0",
+    "00011B0111110B",
+    "11B111Y0110001",
+    "1101000Y011011",
+    "11110010B01100",
+    "0B0111010Y0110",
+    "01B0110110B011"
+  ]
+}
