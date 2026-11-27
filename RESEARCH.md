@@ -31,18 +31,15 @@ The dictionary worker and recurring research are separate processes.
 
 ## Next research run
 
-1. Finish full Cosmic Duality provenance verification using creator material or
-   an independently archived page. The community screenshot has now confirmed
-   only the first 64 base64 characters; it is cropped. Salphaseion matches the community
-   archive; phase32end was recovered from a reproduced historical stage.
-   SHA-256 EVP derivation is now verified for historical phase 3.2, but remains
-   an inference for unsolved blobs. Creator-hosted endpoints were inaccessible
-   to the browser fetch tool at the last check; use another archival source
-   rather than repeatedly retrying the same inaccessible endpoint.
-2. Choose one justified, bounded experiment on unresolved clue relationships
-   such as first/second answers or intertwined halves. Treat byte-140 and
-   community suggestions as hypotheses until supported by source evidence.
-   Compare against the inherited ruled-out list before spending compute.
+1. Use the verified creator-hosted source snapshot to study the unexplained
+   91-letter dbbi and 570-letter faed runs and their relation to decoded clues.
+   Source authentication is complete for the two page blobs: direct PowerShell
+   HTTP retrieval works even though browser fetch failed. Do not spend another
+   run reconfirming ciphertexts or repeating the simple adjacent-order audit.
+2. Choose one justified, bounded experiment from actual source structure.
+   Simple double/triple hashes (L1) and round-robin interleaving (L2) are already
+   tested. Treat byte-140 and community suggestions as hypotheses until
+   supported by source evidence. Compare against the inherited ruled-out list.
 3. Use `research/tester.cjs` to run exact candidate lines with a persistent
    checkpoint. SHA-256 and MD5 are separate KDF hypotheses. Do not repeat the
    completed fixture validation unless the tester or dependencies change.
@@ -163,3 +160,40 @@ candidate requires verification without disclosing it.
   probe, not proof that the unexplained numeric text is meaningless.
 - Worker advanced to 142,000 words / 1,707,234 reported decryptions at
   14:02:04 EST. Worker and existing progress-sync process remain present.
+
+## 2026-11-27 15:01 EST: full live-source verification and structural audit S1
+
+- Successfully retrieved the actual creator-hosted hashed page with PowerShell
+  `Invoke-WebRequest -UseBasicParsing` (HTTP 200). Previous web-tool failures
+  were not evidence that the site was offline. The full Cosmic envelope and
+  reconstructed Salphaseion envelope exactly match our local target hashes.
+  The page has two textareas; the small blob is reconstructed by keeping all
+  64 characters in each fragment, including the first fragment's terminal z,
+  and removing the nested 40-letter binary marker that decodes to `enter`.
+  This resolves full current-source provenance, not historical immutability.
+- Source retrieved 2026-11-27:
+  [creator-hosted page](https://gsmg.io/89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32).
+  Saved UTF-8 HTML SHA-256:
+  `a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77`.
+  Local snapshot: `.gsmg-private/sources/salphaseion-2026-11-27.html` (ignored
+  by Git). Public reproducible parser and metadata:
+  `research/audit-live-page.cjs`, `research/live-page-audit-2026-11-27.json`.
+- Isolated the 91-letter dbbi run and 570-letter faed run around the binary
+  `matrixsumlist` marker. Both use only a-i, unlike the later a-i/o decimal
+  clue segments. They remain unexplained; earlier decimal probes do not
+  justify treating them as nonsense or as decoded text.
+- Experiment S1 measures adjacent-symbol mutual information against 5,000
+  fixed-seed shuffled controls per run, preserving every symbol count. This
+  is an exploratory structural test, not a candidate-password search. The
+  two-sided Monte Carlo p-values are 0.10238 (dbbi) and 0.51110 (faed), neither
+  below the nominal Bonferroni threshold 0.025 for these two tests. The test
+  finds no unusual adjacency at that threshold; it cannot establish randomness
+  or rule out long-range, numeric, matrix, or cryptographic structure.
+- Full source/run hashes, counts, statistic, controls and seed are recorded in
+  `research/run-structure-S1.json`; executable method:
+  `node research/audit-run-structure.cjs .gsmg-private/sources/salphaseion-2026-11-27.html`.
+  No puzzle decryptions or new potential solutions in S1. Do not repeat S1
+  unchanged. A future experiment needs a source-supported transformation or
+  a clearly stated independent structural hypothesis.
+- Source worker checkpoint: 164,000 words / 1,971,234 reported decryptions at
+  14:58:21 EST. Worker and sync process are still present and untouched.

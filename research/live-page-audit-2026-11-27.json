@@ -1,0 +1,38 @@
+{
+  "auditedAt": "2026-11-27T20:00:43.988Z",
+  "source": "https://gsmg.io/89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32",
+  "fetch": "PowerShell Invoke-WebRequest, HTTP 200",
+  "savedUtf8PageSha256": "a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77",
+  "sourceStatus": "current-creator-hosted-response-not-proof-of-historical-immutability",
+  "checks": [
+    {
+      "name": "cosmic",
+      "envelopeSha256": "b18950551a4dd0cb8a9378f0906ba18c03a15f0ee83eb98c6bc90165c5f79805",
+      "ciphertextBytes": 1328,
+      "exactLocalMatch": true
+    },
+    {
+      "name": "salphaseion",
+      "envelopeSha256": "9e2831e1b34b5f34796df47ccaf6530d48d371c61a6bff84d60db1064fa7a258",
+      "ciphertextBytes": 80,
+      "exactLocalMatch": true
+    }
+  ],
+  "markerChecks": {
+    "matrixsumlist": true,
+    "enter": true
+  },
+  "smallAssembly": "Keep all 64 characters of each base64 fragment, including the z at the end of the first; remove only the 40-letter binary enter marker.",
+  "unexplainedRuns": [
+    {
+      "name": "dbbi",
+      "length": 91,
+      "sha256": "71fe46259e270c113529dfaded4b59c59a9dffd826a7202ab07fc498b6a2c5ca"
+    },
+    {
+      "name": "faed",
+      "length": 570,
+      "sha256": "066191b4aafc114fbca7f0d168382f40129c4ff18490375b689741081d5ef3c2"
+    }
+  ]
+}

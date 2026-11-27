@@ -1,0 +1,65 @@
+{
+  "id": "S1-2026-11-27",
+  "auditedAt": "2026-11-27T20:00:44.253Z",
+  "generatorSha256": "2ddeac26338633cb307472bdf1b51643c06ca365ef3a1cf8cb32b24524a0661a",
+  "sourceUtf8Sha256": "a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77",
+  "nullModel": "uniform permutations of each observed run, preserving all symbol counts",
+  "statistic": "adjacent-symbol mutual information; two-sided empirical tail test",
+  "seedHex": "47534d47",
+  "iterationsPerRun": 5000,
+  "familywiseAlpha": 0.05,
+  "perRunBonferroniAlpha": 0.025,
+  "result": [
+    {
+      "name": "dbbi",
+      "length": 91,
+      "sha256": "71fe46259e270c113529dfaded4b59c59a9dffd826a7202ab07fc498b6a2c5ca",
+      "counts": {
+        "a": 3,
+        "b": 25,
+        "c": 8,
+        "d": 4,
+        "e": 18,
+        "f": 10,
+        "g": 10,
+        "h": 8,
+        "i": 5
+      },
+      "observedAdjacentMutualInformationBits": 0.6630097451875162,
+      "shuffledMeanBits": 0.5474513936594007,
+      "shuffledInterval95": [
+        0.419674917077626,
+        0.6892684863988885
+      ],
+      "upperTailMonteCarloP": 0.05118976204759048,
+      "lowerTailMonteCarloP": 0.9490101979604079,
+      "twoSidedMonteCarloP": 0.10237952409518096
+    },
+    {
+      "name": "faed",
+      "length": 570,
+      "sha256": "066191b4aafc114fbca7f0d168382f40129c4ff18490375b689741081d5ef3c2",
+      "counts": {
+        "a": 54,
+        "b": 49,
+        "c": 52,
+        "d": 49,
+        "e": 69,
+        "f": 57,
+        "g": 107,
+        "h": 58,
+        "i": 75
+      },
+      "observedAdjacentMutualInformationBits": 0.09372376180020596,
+      "shuffledMeanBits": 0.08440287932286901,
+      "shuffledInterval95": [
+        0.05733690475092198,
+        0.11616951404093784
+      ],
+      "upperTailMonteCarloP": 0.2555488902219556,
+      "lowerTailMonteCarloP": 0.7446510697860428,
+      "twoSidedMonteCarloP": 0.5110977804439112
+    }
+  ],
+  "limitations": "Failure to reject is not proof of randomness; this tests only adjacent order, not all encodings, long-range structure, or cryptographic content."
+}
