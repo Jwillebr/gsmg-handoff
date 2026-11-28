@@ -36,6 +36,11 @@ The dictionary worker and recurring research are separate processes.
    Source authentication is complete for the two page blobs: direct PowerShell
    HTTP retrieval works even though browser fetch failed. Do not spend another
    run reconfirming ciphertexts or repeating the simple adjacent-order audit.
+   S4 independently confirms that FAED's last 32 symbols omit e and g, and
+   quantifies the restriction against all 36 omitted-pair alternatives. Keep
+   the full prefix and tail; seek an encoding/generation explanation for that
+   boundary rather than assuming the entire run is uniform noise or plaintext.
+   Do not repeat the same suffix permutation test without a changed hypothesis.
 2. Choose one justified, bounded experiment from actual source structure.
    Simple double/triple hashes (L1) and round-robin interleaving (L2) are already
    tested. Treat byte-140 and community suggestions as hypotheses until
@@ -322,3 +327,39 @@ candidate requires verification without disclosing it.
   or supposed community plaintext hashes were used in L3.
 - Worker checkpoint: 232,000 words / 2,787,234 reported decryptions at
   17:54:06 EST. Worker and inputs were not modified.
+
+## 2026-11-27 19:02 EST: FAED terminal-alphabet experiment S4
+
+- Examined a prior community observation about the end of FAED using the
+  authenticated creator-source snapshot. Its last 32 symbols, zero-based
+  positions 538..569, contain neither `e` nor `g`; both appear repeatedly
+  earlier (69 e, 107 g in the full 570-symbol run). The maximal e/g-free suffix
+  is exactly 32 symbols. Its alphabet is `abcdfhi`, and suffix SHA-256 is
+  `47c840bd13ccf320b70f29b776ddb7e59df055ccd5f474c057c429d057f690b8`.
+- Tested a specific nonstationarity question, distinct from S1's adjacent-order
+  test: for each of all 36 omitted-letter pairs, find the maximal terminal run
+  lacking that pair and score it by its exact count-conditioned absence
+  probability. Use the most extreme score across all pairs for both observed
+  data and controls, so the e/g pair is not privileged in the null comparison.
+- The observed best pair is e/g. Given the observed counts, absence from a
+  specified 32-symbol suffix has probability 0.00000490963 under uniform
+  count-preserving order. In 10,000 fixed-seed shuffled controls, zero had an
+  equally extreme maximum over all 36 pairs. Smoothed descriptive tail
+  frequency: 1/10,001. Zero observed controls is not zero probability. This
+  exploratory analysis accounts for pair selection but not every past research
+  choice or arbitrary interior-window searches; it identifies a structural
+  lead, not a cipher or a plaintext. S1's weaker global result does not rule
+  out this localized terminal structure.
+- Reproducer with an exact finite-population probability sanity check:
+  `research/audit-faed-tail.cjs`. Full source/FAED/generator/suffix hashes,
+  statistic, seed, counts and controls: `research/faed-tail-S4.json`. Runtime
+  for controls: 138 ms. No AES batch or new potential solution in this run.
+- Primary input:
+  [creator-hosted source](https://gsmg.io/89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32),
+  saved 2026-11-27 (page SHA-256 `a83d3de7...1779d77`, full hash in artifact).
+  Prior observation motivating this check:
+  [community evidence reconciliation](https://github.com/AppleLamps/combined-puzzle/blob/main/GSMG-CLEAN/16_CANONICAL_LEDGER_AND_WORKING_RULES_2026-11-10.md).
+  No further community decryption claims are adopted.
+- Worker checkpoint: 256,000 words / 3,075,234 reported decryptions at
+  18:56:03 EST. Existing worker and sync processes remain present; no inputs
+  or running processes were changed.

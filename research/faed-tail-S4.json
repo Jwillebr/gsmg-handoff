@@ -1,0 +1,38 @@
+{
+  "id": "S4-2026-11-27",
+  "auditedAt": "2026-11-28T00:01:44.363Z",
+  "generatorSha256": "46b2e1ee13734b511a54789a8555333ccb7509527884d501882dc4bab9a61f22",
+  "sourceUtf8Sha256": "a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77",
+  "faedSha256": "066191b4aafc114fbca7f0d168382f40129c4ff18490375b689741081d5ef3c2",
+  "length": 570,
+  "counts": {
+    "a": 54,
+    "b": 49,
+    "c": 52,
+    "d": 49,
+    "e": 69,
+    "f": 57,
+    "g": 107,
+    "h": 58,
+    "i": 75
+  },
+  "statistic": "Maximum -log(P(no occurrence of the pair in a suffix of its observed maximal length)), across all 36 letter pairs; exact finite-population probability",
+  "observed": {
+    "score": 12.22431227520472,
+    "length": 32,
+    "omittedLetters": "eg",
+    "startIndexZeroBased": 538,
+    "singlePairAbsenceProbability": 0.000004909628528132621,
+    "suffixSha256": "47c840bd13ccf320b70f29b776ddb7e59df055ccd5f474c057c429d057f690b8",
+    "suffixAlphabet": "abcdfhi"
+  },
+  "control": {
+    "seedHex": "53344654",
+    "iterations": 10000,
+    "atLeastObserved": 0,
+    "smoothedTailFrequency": 0.00009999000099990002,
+    "elapsedMs": 138,
+    "nullModel": "uniform permutations preserving every FAED symbol count; recompute maximum over all 36 pairs for each control"
+  },
+  "limitation": "Exploratory suffix test motivated by a prior community observation. Controls account for pair selection, not all earlier tests or interior-window selection. No cipher, plaintext or password is identified."
+}
