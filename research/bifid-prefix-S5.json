@@ -1,0 +1,46 @@
+{
+  "id": "S5-2026-11-27",
+  "auditedAt": "2026-11-28T01:04:39.762Z",
+  "sourceUtf8Sha256": "a83d3de7810f26b19b4965339b76d403e44f6b6877e5d7de2555480ca1779d77",
+  "faedSha256": "066191b4aafc114fbca7f0d168382f40129c4ff18490375b689741081d5ef3c2",
+  "dbbiSha256": "71fe46259e270c113529dfaded4b59c59a9dffd826a7202ab07fc498b6a2c5ca",
+  "generatorSha256": "f7ac76282c0b182b41d76a72ace5d42d6b7116903d8b47fd96baf6846e3dc797",
+  "method": "5x5 Bifid, J omitted, whole-message period 570; seed is deduplicated first 13 DBBI symbols; append remaining alphabet",
+  "algorithmReference": "https://github.com/jameslyons/pycipher/blob/master/pycipher/bifid.py",
+  "algorithmReferenceBlobSha": "18ca27f0bcbe4ec0020e2ec635d5e8195be23c43",
+  "seed": "DBIFHCEG",
+  "keySquare": "DBIFHCEGAKLMNOPQRSTUVWXYZ",
+  "period": 570,
+  "reproducedPrefix": "BTCSEED",
+  "decodedSha256": "0c5d984f90e9baefc09f1d3888e62acbd101f9b0194887e2ae88fc6c9967745e",
+  "exhaustiveFamily": {
+    "keys": 40320,
+    "startsBtcseed": 4,
+    "seedWithinFirstEight": 480,
+    "btcseedFraction": 0.0000992063492063492,
+    "seedFraction": 0.011904761904761904,
+    "elapsedMs": 690
+  },
+  "alternatingAlphabetControls": [
+    {
+      "seed": "DBIFHCEG",
+      "evenIndexAlphabet": "BCDE",
+      "mathematicallyAllowedEvenAlphabet": "BCDE",
+      "allEvenPositionsWithinForcedAlphabet": true
+    },
+    {
+      "seed": "ABCDEFGHI",
+      "evenIndexAlphabet": "ABFG",
+      "mathematicallyAllowedEvenAlphabet": "ABFG",
+      "allEvenPositionsWithinForcedAlphabet": true
+    },
+    {
+      "seed": "IHGFEDCBA",
+      "evenIndexAlphabet": "CDHI",
+      "mathematicallyAllowedEvenAlphabet": "CDHI",
+      "allEvenPositionsWithinForcedAlphabet": true
+    }
+  ],
+  "explanation": "All ciphertext letters occupy the first nine key-square positions, hence rows 0 or 1. At even output indices both reconstructed coordinates come from those row entries, forcing a 2x2/four-letter alphabet. That pattern is produced by the transform itself.",
+  "limitations": "Prefix targets were noticed after prior searches; frequencies are not a globally corrected significance test. This audit cannot prove no intended Bifid reading exists, and neither a short word nor the alternating alphabet validates a decrypted stage."
+}

@@ -41,6 +41,11 @@ The dictionary worker and recurring research are separate processes.
    the full prefix and tail; seek an encoding/generation explanation for that
    boundary rather than assuming the entire run is uniform noise or plaintext.
    Do not repeat the same suffix permutation test without a changed hypothesis.
+   S5 reproduces the Bifid BTCSEED prefix, but explains the alternating
+   four-letter channel as a deterministic property of that transform. Neither
+   is a verified solved stage. Further work on that reading must make an
+   independent prediction or open a target; do not repeat the key-order scan
+   or use its forced channel structure as independent confirmation.
 2. Choose one justified, bounded experiment from actual source structure.
    Simple double/triple hashes (L1) and round-robin interleaving (L2) are already
    tested. Treat byte-140 and community suggestions as hypotheses until
@@ -363,3 +368,44 @@ candidate requires verification without disclosing it.
 - Worker checkpoint: 256,000 words / 3,075,234 reported decryptions at
   18:56:03 EST. Existing worker and sync processes remain present; no inputs
   or running processes were changed.
+
+## 2026-11-27 20:05 EST: Bifid-prefix and forced-channel audit S5
+
+- Investigated whether a public Bifid reading of FAED supplies validated
+  decoding evidence. Implemented standard 5x5 Bifid with J omitted and a
+  whole-message period of 570, using the deduplicated DBBI head as key seed
+  and then the remaining alphabet. A hand-derived two-letter coordinate
+  fixture passes. Algorithm checked against the author's
+  [pycipher implementation](https://github.com/jameslyons/pycipher/blob/master/pycipher/bifid.py),
+  retrieved 2026-11-27, blob `18ca27f0bcbe4ec0020e2ec635d5e8195be23c43`.
+- The source-derived seed `DBIFHCEG` gives square
+  `DBIFHCEGAKLMNOPQRSTUVWXYZ` and reproduces the reported `BTCSEED` prefix.
+  Deduplicating the entire DBBI string and filling the alphabet gives that
+  same square; this audit does not claim the seed alone is arbitrary. Full
+  unverified transform is kept only in `.gsmg-private/bifid-S5/decoded.txt`;
+  output SHA-256 `0c5d984f90e9baefc09f1d3888e62acbd101f9b0194887e2ae88fc6c9967745e`.
+- Exhaustively examined all 40,320 permutations of those eight seed letters.
+  Four produce an exact BTCSEED prefix; 480 contain SEED within the first
+  eight output characters (1.19048%). These are narrow-family descriptive
+  frequencies, not the probability an intended reading is true or false,
+  and not corrected for earlier choices of cipher, period, or target words.
+- Crucially, the alternating restricted channel needs no hidden message:
+  all ciphertext letters occupy the first nine square positions (two rows).
+  In whole-period Bifid, both coordinates of even-index output letters thus
+  come from row values 0/1, forcing a 2x2/four-letter output subset. It holds
+  for the DBBI square and two unrelated ascending/descending seed controls.
+  The restricted alphabet is BCDE for the DBBI key, ABFG and CDHI for controls.
+  Treating that manufactured channel as an independent confirmation is invalid.
+- Reproducer and complete inputs/settings/counts/control explanation:
+  `research/audit-bifid-prefix.cjs`, `research/bifid-prefix-S5.json`. Full key
+  family ran in 690 ms. No AES candidates or confirmed plaintext in this run.
+  This does not prove every Bifid interpretation is wrong; an independent
+  prediction or successful cryptographic gate is still required.
+- Prior claim consulted 2026-11-27:
+  [researcher's Bifid audit](https://github.com/AppleLamps/GSMG-CLEAN/blob/main/prior_research_ledgers/rabbit_r1/FINDINGS_round1.md).
+  Counts and the forced-channel property were independently reproduced here;
+  broader claims about creator messages and complete cipher exhaustion are
+  not independently established. Primary FAED input remains the authenticated
+  [Salphaseion snapshot](https://gsmg.io/89727c598b9cd1cf8873f27cb7057f050645ddb6a7a157a110239ac0152f6a32).
+- Worker checkpoint: 282,000 words / 3,387,234 reported decryptions at
+  20:02:43 EST. Existing worker and sync processes remain active and untouched.
